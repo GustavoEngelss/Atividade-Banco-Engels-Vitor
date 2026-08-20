@@ -1,11 +1,11 @@
-/*Bloco 5.2 - Categorias Premium*/
+/*Bloco 5.2 - Categorias premium do catalogo*/
 USE ecommerce_nexashop;
-select
-	categoria,
-    count(*) as 'Quantidade de Produtos',
-    round(avg(preco), 2) as 'Preço Médio (R$)'
-from produtos 
-where Ativo = '1'
-group by categoria
-having avg(preco) > 300
-order by 'Preço Médio (R$)' desc;
+SELECT
+categoria,
+COUNT(*) AS quantidade_produtos,
+ROUND(AVG(preco), 2) AS preco_medio
+FROM produtos
+WHERE ativo = 1
+GROUP BY categoria
+HAVING AVG(preco) > 300
+ORDER BY preco_medio DESC;

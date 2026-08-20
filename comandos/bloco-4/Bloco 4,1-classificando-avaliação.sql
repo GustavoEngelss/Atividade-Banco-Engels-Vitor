@@ -4,9 +4,9 @@ select
 	id,
     nota,
     case
-		when nota = 5 then 'Exelente'
+		when nota = 5 then 'Excelente'
         when nota = 4 then 'Boa'
         when nota = 3 then 'Regular'
-        when nota in (1, 2) then 'Insatisdatória'
+        when nota in (1, 2) then 'Insatisfatória'
 	end as classificacao
 from avaliacoes
