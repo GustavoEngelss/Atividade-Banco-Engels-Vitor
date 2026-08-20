@@ -1,13 +1,13 @@
-/*Bloco 4.2 - Separação de Avaliações*/
+/*Bloco 4.2 - Separacao de Avaliacoes*/
 USE ecommerce_nexashop;
-select
-	case
-	when nota = 5 then 'Exelente'
-	when nota = 4 then 'Boa'
-	when nota = 3 then 'Regular'
-	when nota in (1, 2) then 'Insatisdatória'
-    end as classificacao,
-    count(*) as 'Quantidade de Avaliações'
-from avaliacoes
-group by classificacao
-order by 'Quantidade de Avaliações' desc;    
+SELECT
+CASE
+WHEN nota = 5 THEN 'Excelente'
+WHEN nota = 4 THEN 'Boa'
+WHEN nota = 3 THEN 'Regular'
+WHEN nota IN (1, 2) THEN 'Insatisfatória'
+END AS classificacao,
+COUNT(*) AS quantidade_avaliacoes
+FROM avaliacoes
+GROUP BY classificacao
+ORDER BY quantidade_avaliacoes DESC;

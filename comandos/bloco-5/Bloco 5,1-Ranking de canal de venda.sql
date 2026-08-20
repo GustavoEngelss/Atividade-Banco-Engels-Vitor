@@ -1,15 +1,13 @@
-/*Bloco 5.1 - Ranking de canal de venda*/
+/*Bloco 5.1 - Ranking de canal de venda e forma de pagamento*/
 USE ecommerce_nexashop;
-select
-	canal_venda,
-    forma_pagamento,
-    count(*) as 'Quantidades de Pedidos',
-    sum(valor_total) as 'Faturamento (R$)'
-from pedidos 
-where status = 'Aprovado'
-group by
-	canal_venda,
-    forma_pagamento
-having count(*) >= 200
-order by 'Faturamento (R$)' desc
-limit 5;
+SELECT
+canal_venda,
+forma_pagamento,
+COUNT(*) AS quantidade_pedidos,
+SUM(valor_total) AS faturamento
+FROM pedidos
+WHERE status = 'Aprovado'
+GROUP BY canal_venda, forma_pagamento
+HAVING COUNT(*) >= 200
+ORDER BY faturamento DESC
+LIMIT 5;
